@@ -1,0 +1,25 @@
+### /etc/salt/cloud.maps.d/do-app-with-rproxy.map ###
+#####################################################
+do-centos:
+  - nginx-rproxy:
+      minion:
+        mine_functions:
+          network.ip_addrs:
+            interface: eth0
+        grains:
+          roles: rproxy
+do-ubuntu:
+  - appserver-01:
+      minion:
+        mine_functions:
+          network.ip_addrs:
+            interface: eth0
+        grains:
+          roles: appserver
+  - appserver-02:
+      minion:
+        mine_functions:
+          network.ip_addrs:
+            interface: eth0
+        grains:
+          roles: appserver

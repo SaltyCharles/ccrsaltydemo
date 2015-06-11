@@ -1,0 +1,24 @@
+### /etc/salt/cloud.maps.d/everything.map ####
+######################################################
+
+#DigitalOcean
+do-ubuntu:
+  - do-ubuntu-min-01
+  - do-ubuntu-min-02
+
+#Azure
+azure-ubuntu:
+  - az-ubuntu-min-01
+  - az-ubuntu-min-02
+
+#AWS
+debian_squeeze_ec2:
+  - aws-debian-min-01
+  - aws-debian-min-02
+
+slack-message:
+   slack.post_message:
+     - channel: {{ pillar['demose']['slack_channel'] }}
+     - from_name: Salty Orchestrator
+     - message: 'My salty salt master just mastered salting ALL THE MINIONS! AWS, Azure, Digital Ocean, Mmm, how tasty.'
+     - api_key: {{ pillar['demose']['slack_api'] }}

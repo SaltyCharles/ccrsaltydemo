@@ -1,0 +1,18 @@
+<html>
+    <head>
+    <style>
+    h1 {color:red;}
+    h2 {color:blue;}
+    p {color:green;}
+    </style>
+        <title>Welcome to Salted {{ grains['host'] }}!</title>
+    </head>
+    <body bgcolor="white" text="black">
+        <center><h1>Welcome to Salted NGINX on {{ grains['host'] }}!</h1></center>
+        <center><h2>Here are some of my grains:</h2></center>
+
+        <center><p>{% for name,val in grains.items() if name in ['ip_interfaces','fqdn','external_ip','lsb_distrib_description','os_family','oscodename','cpuarch','num_cpus','master'] %}</center>
+        <center>{{ name }},{{ val|yaml() }}</center>
+        <center>{% endfor %}</p></center>
+    </body>
+</html>

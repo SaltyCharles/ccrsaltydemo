@@ -1,0 +1,17 @@
+### /etc/salt/cloud.maps.d/do.map ####
+######################################################
+do-ubuntu:
+  - ubuntu-min-01
+  - ubuntu-min-02
+
+do-fedora:
+  - fedora-min-01
+  - fedora-min-02
+
+do-debian:
+  - debian-min-01
+  - debian-min-02
+
+do-centos:
+  - centos-min-01
+  - centos-min-02
