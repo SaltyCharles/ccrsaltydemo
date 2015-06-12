@@ -23,7 +23,7 @@ base:
 
 "Notification of docker install":
   slack.post_message:
-    - channel: {{ pillar['demose']['slack_channel'] }}
-    - from_name: 'SaltyCharles-API'
+    - channel: {{ pillar['slack']['slack_channel'] }}
+    - from_name: {{ pillar['slack']['from_name'] }}
     - message: 'Docker Testing Branch has been installed on {{ grains['id'] }}'
-    - api_key: {{ pillar['charles']['api_key'] }}
+    - api_key: {{ pillar['slack']['slack_api'] }}

@@ -28,7 +28,7 @@
 
 "Notification of install":
    slack.post_message:
-     - channel: {{ pillar['demose']['slack_channel'] }}
-     - from_name: Salty Packager
+     - channel: {{ pillar['slack']['slack_channel'] }}
+     - from_name: {{ pillar['slack']['from_name'] }}
      - message: '{{ pkg_to_install }} was just installed on {{ grains['id'] }} and the template was updated.'
-     - api_key: {{ pillar['demose']['slack_api'] }}
+     - api_key: {{ pillar['slack']['slack_api'] }}

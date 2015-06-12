@@ -8,7 +8,7 @@ redis:
 
 "Notification of install":
    slack.post_message:
-     - channel: {{ pillar['demose']['slack_channel'] }}
-     - from_name: Salty Packager
+     - channel: {{ pillar['slack']['slack_channel'] }}
+     - from_name: {{ pillar['slack']['from_name'] }}
      - message: 'redis was just installed on {{ grains['id'] }} and the service was started.'
-     - api_key: {{ pillar['demose']['slack_api'] }}
+     - api_key: {{ pillar['slack']['slack_api'] }}

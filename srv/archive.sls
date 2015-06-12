@@ -15,7 +15,7 @@ install_archive_pkgs:
 
 "Notification of install":
   slack.post_message:
-    - channel: {{ pillar['demose']['slack_channel'] }}
-    - from_name: 'SaltyCharles-API'
+    - channel: {{ pillar['slack']['slack_channel'] }}
+    - from_name: {{ pillar['slack']['from_name'] }}
     - message: 'rsync, sharutils, vsftpd have been installed on {{ grains['id'] }}'
-    - api_key: {{ pillar['demose']['api_key'] }}
+    - api_key: {{ pillar['slack']['slack_api'] }}

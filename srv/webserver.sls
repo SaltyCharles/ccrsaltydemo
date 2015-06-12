@@ -6,7 +6,7 @@ webserver_stuff:
 
 "Notification of install":
    slack.post_message:
-     - channel: {{ pillar['demose']['slack_channel'] }}
-     - from_name: Salty Packager
+     - channel: {{ pillar['slack']['slack_channel'] }}
+     - from_name: {{ pillar['slack']['from_name'] }}
      - message: 'httpd was just installed on {{ grains['id'] }}'
-     - api_key: {{ pillar['demose']['slack_api'] }}
+     - api_key: {{ pillar['slack']['slack_api'] }}
