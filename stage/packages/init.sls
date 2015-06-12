@@ -15,3 +15,10 @@
       - pkg: package.required
     {% endif %}
 {% endfor %}
+
+"Notification of install":
+   slack.post_message:
+     - channel: {{ pillar['slack']['slack_channel'] }}
+     - from_name: {{ pillar['slack']['from_name'] }}
+     - message: '{{ package.name }} was just installed on {{ grains['id'] }}'
+     - api_key: {{ pillar['slack']['slack_api'] }}
